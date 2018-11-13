@@ -8,6 +8,13 @@
 # install dependencies
 npm install
 
+# install moment lib
+npm install moment-timezone
+npm install moment
+
+# install vuex
+npm install vuex
+
 # serve with hot reload at localhost:8080
 npm run dev
 
