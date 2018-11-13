@@ -1,12 +1,17 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="flex-row">
+    <div class="title flex-row">
+      <img src="./assets/logo.png" alt="Logo" class="logo">
+      <h1>{{ msg }}</h1>
+    </div>
+    <div class="mounth">
+      <h3>Mart 2018</h3>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -16,12 +21,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app .title .logo {
+    width: 50px;
+    margin: 10px;
+  }
 </style>
