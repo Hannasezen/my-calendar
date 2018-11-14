@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+import moment from 'moment-timezone';
+moment.tz.setDefault('UTC');
 
 export default new Vuex.Store({
     state: {
@@ -9,7 +11,12 @@ export default new Vuex.Store({
         currentMonth: 11,
         eventFormPosX: 0,
         eventFormPosY: 0,
-        eventFormActive: false
+        eventFormActive: false,
+        events: [
+            { description: 'Random event 1', date: moment('2018-11-01', 'YYYY-MM-DD') },
+            { description: 'Random event 2', date: moment('2018-11-15', 'YYYY-MM-DD') },
+            { description: 'Random event 3', date: moment('2018-12-14', 'YYYY-MM-DD') }
+        ]
     },
     mutations: {
         setCurrentMonth(state, payload) {
