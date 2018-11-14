@@ -43,7 +43,9 @@ button {
 
   #day-bar div {
     width: 100%;
-    padding: 0.5rem;
+    padding: 5px;
+    font-size: 20px;
+    text-align: left;
   }
 
   #calendar {
@@ -57,10 +59,12 @@ button {
   }
 
   #calendar .calendar-week .day {
+    text-align: left;
+    vertical-align: top;
     overflow: hidden;
     font-weight: bold;
     width: 100%;
-    padding: 0.5rem;
+    padding: 10px;
     height: 100px;
     user-select: none;
     cursor: default;
@@ -90,4 +94,48 @@ button {
 
   #calendar .calendar-week .day.active {
       background-color: rgba(255, 182, 193, 0.3);
+  }
+
+  #event-form {
+    display: none;
+    box-shadow: 0 2px 4px #ddd;
+    position: fixed;
+    width: 300px;
+    transform: translate(-50%, -100%);
+    z-index: 10;
+    padding: 14px;
+    background-color: white;
+    border: 1px #ddd solid;
+    flex-direction: column;
+    align-content: space-between;
+  }
+
+  #event-form.active {
+    display: flex;
+  }
+
+  #event-form h4 {
+    margin: 0 0 25px 0;
+    color: #999;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  #event-form p {
+    font-size: 14px;
+    margin: 0 0 20px 0;
+  }
+
+  #event-form .text {
+    margin-bottom: 20px;
+  }
+
+  #event-form .text input[type='text'] {
+    width: 100px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #event-form .buttons {
+    text-align: right;
   }

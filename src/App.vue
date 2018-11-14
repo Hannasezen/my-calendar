@@ -23,12 +23,14 @@
         <CalendarDay v-for="day in week" :day="day"></CalendarDay>
       </div>
     </div>
+    <EventForm></EventForm>
   </div>
 </template>
 
 <script>
 import CalendarDay from './CalendarDay';
 import CurrentMonth from './CurrentMonth';
+import EventForm from './EventForm';
 
 export default {
   computed: {
@@ -89,7 +91,8 @@ export default {
   },
   components: {
     CalendarDay,
-    CurrentMonth
+    CurrentMonth,
+    EventForm
   }
 }
 </script>
