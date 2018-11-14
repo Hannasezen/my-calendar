@@ -8,6 +8,7 @@ body {
     color: #35495e;
     background-color: aquamarine;
     padding: 30px;
+    color: #35495e;
 }
 
 ul {
@@ -100,10 +101,9 @@ button {
     display: none;
     box-shadow: 0 2px 4px #ddd;
     position: fixed;
-    width: 300px;
     transform: translate(-50%, -100%);
     z-index: 10;
-    padding: 14px;
+    padding: 10px;
     background-color: white;
     border: 1px #ddd solid;
     flex-direction: column;
@@ -115,10 +115,11 @@ button {
   }
 
   #event-form h4 {
-    margin: 0 0 25px 0;
+    margin: 10px;
+    text-align: left; 
     color: #999;
-    font-weight: normal;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   #event-form p {
@@ -127,13 +128,14 @@ button {
   }
 
   #event-form .text {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   #event-form .text input[type='text'] {
-    width: 100px;
-    padding: 10px;
-    font-size: 14px;
+    width: 85%;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
   }
 
   #event-form .buttons {
