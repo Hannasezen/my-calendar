@@ -24,6 +24,7 @@
             },
             create() {
                 this.$store.commit('addEvent', this.description);
+                this.close();
             }
         },
         computed: {
