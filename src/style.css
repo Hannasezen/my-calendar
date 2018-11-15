@@ -1,36 +1,83 @@
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
-body {
+  body {
+    font-family: 'Muli', Helvetica, Arial, sans-serif;
     color: #35495e;
+    padding-bottom: 2rem;
     background-color: aquamarine;
-    padding: 30px;
-    color: #35495e;
-    font-family: 'Muli', sans-serif;
-}
+    display: flex;
+    justify-content: center;
+  }
 
-ul {
+  ul {
     list-style: none;
-}
+  }
 
-button {
+  button {
     background-color: #ddd;
-}
+  }
 
-.flex-row {
+  .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
+  }
 
-#app {
+  #app {
     text-align: center;
     color: #2c3e50;
     margin: 0 auto;
+    flex-basis: 1200px;
+  }
+
+  #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  #header div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  #header div:first-child h1 {
+    margin: 0 0 0 0.5rem;
+    color: #35495e;
+    padding-top: 7px;
+  }
+
+  #header div:last-child {
+    font-weight: bold;
+  }
+
+  #header div:last-child button {
+    color: #999;
+    font-size: 1rem;
+    padding: 0;
+    width: 20px;
+    background-color: white;
+    user-select: none;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-left: 0.25rem;
+  }
+
+  #header div:last-child button:focus {
+    outline: none;
+  }
+
+  #header div:last-child button:hover {
+    color: #35495e;
+    box-shadow: 0 2px 2px #ddd;
   }
 
   #day-bar {
@@ -41,7 +88,7 @@ button {
 
   #day-bar div {
     width: 100%;
-    padding: 5px;
+    padding: 0.5rem;
     font-size: 20px;
     text-align: left;
   }
@@ -57,6 +104,7 @@ button {
   }
 
   #calendar .calendar-week .day {
+    min-height: 150px;
     text-align: left;
     vertical-align: top;
     overflow: hidden;
@@ -98,6 +146,7 @@ button {
     display: none;
     box-shadow: 0 2px 4px #ddd;
     position: fixed;
+    width: 360px;
     transform: translate(-50%, -100%);
     z-index: 10;
     padding: 10px;
@@ -105,6 +154,11 @@ button {
     border: 1px #ddd solid;
     flex-direction: column;
     align-content: space-between;
+    align-items: stretch;
+  }
+
+  #event-form > * {
+    width: 100%;
   }
 
   #event-form.active {
@@ -112,26 +166,27 @@ button {
   }
 
   #event-form h4 {
-    margin: 10px;
     text-align: left; 
     color: #999;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
 
   #event-form p {
-    font-size: 14px;
-    margin: 0 0 20px 0;
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 15px;
   }
 
   #event-form .text {
+    width: 100%;
     margin-bottom: 15px;
   }
 
   #event-form .text input[type='text'] {
-    width: 85%;
-    padding: 5px;
     font-size: 16px;
+    width: 100%;
     outline: none;
   }
 
@@ -139,22 +194,18 @@ button {
     text-align: right;
   }
 
-  #event-form > * {
-    width: 100%;
-  }
-
   #event-form .buttons button {
-    padding: 10px;
+    padding: 0.5rem;
     background-color: #35495e;
-    border: 1px solid darken(#35495e, 5%);
+    cursor: pointer;
+    border: none;
     font-weight: bold;
-    border-radius: 2px;
     color: white;
   }
 
   #event-form .buttons button:hover {
     background-color: lighten(#35495e, 4%);
-    border: 1px solid #35495e;
+    border: none;
   }
 
   #event-form .buttons button:focus {
@@ -164,15 +215,15 @@ button {
   #event-form #close-button {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 1.25rem;
     background-color: white;
     position: absolute;
     border: none;
     width: 20px;
     font-weight: bold;
     color: #666;
-    right: 10px;
-    top: 10px;
+    right: 0.6rem;
+    top: 0.6rem;
     cursor: pointer;
   }
 
