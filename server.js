@@ -11,12 +11,13 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   let template = fs.readFileSync(path.resolve('./index.html'), 'utf-8');
   res.send(template);
-
 });
+
+let events = [];
 
 app.use(require('body-parser').json());
 app.post('/add_event', (req, res) => {
-    console.log(req.body);
+    events.push(req.body);
     res.sendStatus(200);
 });
 

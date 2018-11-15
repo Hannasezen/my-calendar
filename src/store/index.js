@@ -39,11 +39,16 @@ export default new Vuex.Store({
             state.eventFormDate = payload;
         },
         addEvent(state, payload) {
+            state.events.push(payload);
+        }
+    },
+    actions: {
+        addEvent(context, payload) {
             let obj = {
                 description: payload,
-                date: state.eventFormDate
+                date: context.state.eventFormDate
             };
-            state.events.push(obj);
+            context.commit('addEvent', obj);
             Axios.post('/add_event', obj)
         }
     }
