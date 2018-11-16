@@ -8,12 +8,6 @@ Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.mome
 
 import App from './App.vue';
 
-//let events = [
-//  { description: 'Random event 1', date: moment('2018-11-01', 'YYYY-MM-DD') },
-//  { description: 'Random event 2', date: moment('2018-11-15', 'YYYY-MM-DD') },
-//  { description: 'Random event 3', date: moment('2018-12-14', 'YYYY-MM-DD') }
-//];
-
 let events = __INITIAL_STATE__.map(event => {
   return {
     description: event.description,
