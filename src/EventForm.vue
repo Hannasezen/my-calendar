@@ -29,8 +29,11 @@
             },
             create() {
                 if(this.description.length > 0) {
-                    this.$store.dispatch('addEvent', this.description);
-                    this.close();
+                    this.$store.dispatch('addEvent', this.description).then(_ => {
+
+                    });
+                    this.$store.commit('eventFormActive', false);
+                    this.description = '';
                 }               
             }
         },
