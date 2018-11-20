@@ -18,12 +18,12 @@ export default function (events) {
             App
         },
         store,
-        render(crearteElement) {
-            return crearteElement (
+        render(createElement) {
+            return createElement (
             'div',
             {attrs: { id: 'app' }},
             [
-            crearteElement('app')
+                createElement('app')
             ]
             )
         }

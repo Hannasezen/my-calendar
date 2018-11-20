@@ -7,7 +7,7 @@ moment.tz.setDefault('UTC');
 
 import Axios from 'axios';
 import { resolve } from 'url';
-import { rejects } from 'assert';
+import { reject } from 'assert';
 
 export default new Vuex.Store({
     state: {
@@ -42,17 +42,17 @@ export default new Vuex.Store({
     },
     actions: {
         addEvent(context, payload) {
-            return new Promise((resolve, rejects) => {
+            return new Promise((resolve, reject) => {
                 let obj = {
                     description: payload,
                     date: context.state.eventFormDate
                 };
-                axios.post('/add_event', obj).then(response => {
+                Axios.post('/add_event', obj).then(response => {
                     if(response.status === 200) {
                         context.commit('addEvent', obj);
                         resolve();
                     } else {
-                        rejects();
+                        reject();
                     }
                 })
             })               
