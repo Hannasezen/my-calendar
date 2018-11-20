@@ -47,7 +47,7 @@ export default new Vuex.Store({
                     description: payload,
                     date: context.state.eventFormDate
                 };
-                Axios.post('/add_event', obj).then(response => {
+                axios.post('/add_event', obj).then(response => {
                     if(response.status === 200) {
                         context.commit('addEvent', obj);
                         resolve();

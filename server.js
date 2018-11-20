@@ -20,7 +20,7 @@ let events = [
 app.get('/', (req, res) => {
   let template = fs.readFileSync(path.resolve('./index.html'), 'utf-8');
   let contentMarker = '<!--APP-->';
-  res.send(template.replace(contentMarker, `<script> var __INITIAL_STATE__ = ${ serialize(events) } </script>`));
+  res.send(template.replace(contentMarker, `<script>var __INITIAL_STATE__ = ${serialize(events)}</script>`));
 });
 
 app.use(require('body-parser').json());
@@ -35,6 +35,9 @@ if (process.env.NODE_ENV === 'development') {
   const reload = require('reload');
   const reloadServer = reload(server, app);
   require('./webpack-dev-middleware').init(app);
+  require('./webpack-server-compiler').init(function() {
+    console.log('Node bundle built');
+  })
 }
 
 server.listen(process.env.PORT, function () {
